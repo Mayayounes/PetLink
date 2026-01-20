@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+.adopt-status {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .circle-bg-wrapper {
+            position: relative;
+            width: 100%;
+            height: 60vh; /* Half the viewport height */
+            overflow: visible;
+        }
+
+        .circle-bg {
+            width: 100%;
+            height: 100%;
+            background-color: #F8D6D8;
+            border-bottom-left-radius: 100% 100%;
+            border-bottom-right-radius: 100% 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .circle-bg-wrapper img.cat,
+        .circle-bg-wrapper img.dog {
+            position: absolute;
+            object-fit: contain;
+            z-index: 2;
+        }
+
+        img.cat {
+            width: 400px;
+            aspect-ratio: 1 / 1;
+            flex-shrink: 0;
+            position: absolute;
+            left: -100px; /* slightly to the right */
+            bottom: 0;
+            transform: translateX(0); /* remove left shift */
+            z-index: 2;
+        }
+
+        img.dog {
+            width: 522px;
+            height: 350px;
+            aspect-ratio: 1 / 1;
+            flex-shrink: 0;
+            position: absolute;
+            right: -130px; /* shift left from right edge */
+            bottom: 40px; /* moves image 40px above the bottom */
+            transform: translateX(0);
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-family: Inter, sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: #322B2B;
+        }
+
+
+  
+/* Updated CSS for pet container positioning */
+
+/* Main container to hold both filter and pets side by side */
+.main-content {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    align-items: flex-start; /* Align to top */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Filter box positioning */
+.filter-box {
+    width: 450px;
+    padding: 40px;
+    background-color: #F8D6D8;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Pet container positioning - remove the negative top positioning */
+.pet-container {
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-start;
+    /* Remove these positioning properties: */
+    /* position: relative; */
+    /* top: -700px; */
+    /* left: 550px; */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pet-container {
+        width: 100%;
+        justify-content: center;
+    }
+}
+        .pet-wrapper {
+            display: flex;
+            width: 400px;
+            flex-direction: column;
+            align-items: center;
+            width: calc(50% - 12px); /* Two items per row with gap adjustment */
+            position: relative;
+              
+
+        }
+
+        .pet-card {
+            width: 100%; /* Card will take the full width of the container */
+            height: 479px;
+            margin-top: 10px;
+            border: 1px solid #322B2B;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+.pet-info-block {
+    background-color: #FEF7F7;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+    width: 350px;
+
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+    color: #322B2B;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      
+}
+        /* Grayscale when adopted */
+        .pet-card.adopted {
+            opacity: 0.25; /* decrease opacity to 50%, adjust as needed */
+            pointer-events: none;
+                cursor: not-allowed;
+        }
+
+        .title-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .title {
+            color: #322B2B;
+            font-family: Inter, sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .subtitle {
+            color: #555;
+            font-family: Inter, sans-serif;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        .bg-1 {
+            background-blend-mode: multiply;
+            background-color: rgba(90, 90, 90, 0.6);
+        }
+
+
+        .pet-info {
+            position: absolute;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7);
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-family: Inter, sans-serif;
+        }
+
+        /* Adopt button styles */
+        .adopt-btn {
+            margin-top: 12px;
+            padding: 12px 24px;
+            font-family: Inter, sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            background-color: #9D4F51;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Button takes full width of card */
+            text-align: center;
+        }
+
+        .adopt-btn.adopted {
+            background-color: green;
+        }
+
+        .adopt-btn:hover {
+            background-color: #7a3a3b;
+        }
+.filter-btn {
+    padding: 12px 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.apply-filter {
+    background-color: #9D4F51;
+    color: white;
+}
+
+.apply-filter:hover {
+    background-color: #7a3a3b;
+}
+
+.reset-filter {
+    background-color: #555;
+    color: white;
+}
+
+.reset-filter:hover {
+    background-color: #333;
+}
+.adopt-btn.adopted {
+    background-color: green;
+    cursor: not-allowed;
+}
+/* Click effect when button is pressed */
+.filter-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+        /* New container for adopt confirmation */
+        .adopt-confirmation-container {
+            margin-top: 12px;
+            width: 100%; /* Full width */
+            background-color: #F0ECE2;
+            border: 1px solid #322B2B;
+            border-radius: 12px;
+            padding: 16px;
+            font-family: Inter, sans-serif;
+            text-align: center;
+            display: none; /* hidden by default */
+        }
+.pet-info-container {
+    width: 100%;
+    background: #F8D6D8;
+    border: 1px solid #322B2B;
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin-top: 12px;
+    font-family: Inter, sans-serif;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  
+}
+
+.pet-info-container h3 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #322B2B;
+}
+
+.pet-info-container p {
+    margin: 4px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Button inside pet-info */
+.pet-info-container .adopt-btn {
+    margin-top: 12px;
+    padding: 12px 24px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: #9D4F51;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Button takes full width */
+    text-align: center;
+}
+
+.pet-info-container .adopt-btn:hover {
+    background-color: #7a3a3b;
+}
+
+        .adopt-confirmation-container button {
+            margin: 8px 12px;
+            padding: 8px 20px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .adopt-confirmation-yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .adopt-confirmation-no {
+            background-color: #f44336;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            img.cat,
+            img.dog {
+                height: 70%;
+                transform: none;
+            }
+
+            img.cat {
+                left: -50px;
+            }
+
+            img.dog {
+                right: -50px;
+            }
+
+            .pet-wrapper {
+                width: 100%; /* Full width for mobile */
+            }
+        }
+
+        /* Adoption details dialog styles for modal popup */
+        #adoption-details-dialog {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        #adoption-details-dialog .dialog-content {
+            background-color: #FEF7F7 !important;
+            padding: 25px 30px;
+            border-radius: 10px;
+            width: 350px;
+            max-width: 90%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-family: Arial, sans-serif;
+        }
+
+        #adoption-details-dialog .dialog-content h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            color: #333;
+        }
+
+        #adoption-details-dialog .dialog-logo {
+            width: 100px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        #adoption-details-dialog .dialog-text {
+            font-size: 0.95rem;
+            color: #555;
+            text-align: left;
+        }
+
+        #adoption-details-dialog .dialog-text ul {
+            margin: 10px 0 0 20px;
+            padding-left: 0;
+        }
+
+        #adoption-details-dialog .dialog-text p {
+            margin: 10px 0;
+        }
+
+        #close-adoption-details-btn {
+            margin-top: 20px;
+            padding: 8px 18px;
+            background-color: rgb(179, 0, 0);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #close-adoption-details-btn:hover {
+            background-color: rgb(179, 0, 0);
+        }

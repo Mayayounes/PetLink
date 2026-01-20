@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #322B2B;
+}
+ .circle-bg-wrapperrr {
+            position: relative;
+            width: 100%;
+            height: 75vh; /* Half the viewport height */
+            overflow: visible;
+        }
+
+        .circle-bgg {
+            width: 100%;
+            height: 100%;
+            background-color: #F8D6D8;
+            border-bottom-left-radius: 100% 100%;
+            border-bottom-right-radius: 100% 100%;
+            position: relative;
+            z-index: 1;
+        }
+         img.cat {
+            width: 400px;
+            aspect-ratio: 1 / 1;
+            flex-shrink: 0;
+            position: absolute;
+            left: -100px; /* slightly to the right */
+            bottom: 0;
+            transform: translateX(0); /* remove left shift */
+            z-index: 2;
+        }
+
+        img.dog {
+            width: 400px;
+            height: 350px;
+            aspect-ratio: 1 / 1;
+            flex-shrink: 0;
+            position: absolute;
+            right: 0px; /* shift left from right edge */
+            bottom: 40px; /* moves image 40px above the bottom */
+            transform: translateX(0);
+            z-index: 2;
+        
+        }
+         .title-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            pointer-events: none;
+            user-select: none;
+        }
+            .title {
+            color: #322B2B;
+            font-family: Inter, sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .subtitle {
+            color: #555;
+            font-family: Inter, sans-serif;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+/* Header and Navigation */
+.header {
+  background-color: #ec767a;
+  position: relative;
+  z-index: 1;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  height: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo {
+  width: 69px;
+  height: 69px;
+}
+
+.brand-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2f1818;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 18px;
+  color: #322b2b;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.cart .nav-icon {
+  stroke: #fef7f7;
+}
+
+/* Main Content */
+.checkout-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding-top: 60px;
+}
+
+.background-shape-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.background-shape {
+  width: 100%;
+  height: 711px;
+  fill: #f8d6d8;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #322b2b;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  font-size: 18px;
+  color: #322b2b;
+}
+
+.breadcrumb-arrow {
+  width: 16px;
+  height: 16px;
+}
+
+/* Checkout Form */
+.checkout-form {
+  display: flex;
+  width: 766px;
+  padding: 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  border-radius: 20px;
+  border: 1px solid #322b2b;
+  background-color: #fef7f7;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  color: #322b2b;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.delivery-section,
+.payment-section {
+  width: 100%;
+}
+
+.address-input {
+  display: flex;
+  height: 54px;
+  padding: 16px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 20px;
+  border: 1px solid #322b2b;
+  background-color: #fff;
+  margin-bottom: 16px;
+}
+
+.input-field {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 18px;
+  color: #7c6b6c;
+}
+
+.input-field::placeholder {
+  color: #7c6b6c;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.location-inputs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.location-inputs .input-field {
+  height: 54px;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid #322b2b;
+  background-color: #fff;
+}
+
+.save-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid #322b2b;
+  background-color: #fff;
+}
+
+.security-note {
+  color: #7c6b6c;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.payment-method {
+  background-color: #e6e6e6;
+  border-radius: 20px;
+}
+
+.payment-option {
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #322b2b;
+  border-radius: 20px;
+
+}
+
+.payment-label {
+  color: #322b2b;
+  font-size: 18px;
+  cursor: none;
+}
+
+.pay-button {
+  width: 100%;
+  height: 54px;
+  padding: 16px;
+  border-radius: 20px;
+  background-color: #322b2b;
+  color: #fef7f7;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.pay-button:hover {
+  background-color: #4a3f3f; /* slightly lighter for feedback */
+}
+
+/* Click (active) effect */
+.pay-button:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+  .pay-button {
+    width: 100%;
+    height: 54px;
+    padding: 16px;
+    border-radius: 20px;
+    background-color: #322b2b;
+    color: #fef7f7;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dialog-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 182, 193, 0.1); /* Light Pink/10 */
+    backdrop-filter: blur(2px);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dialog-box {
+    background: #fff;
+    padding: 32px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .close-dialog {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .close-dialog:hover {
+    color: #000;
+  }
+
+  .dialog-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  .dialog-subtitle {
+    font-size: 16px;
+    margin-bottom: 24px;
+    color: #444;
+  }
+
+  .dialog-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+
+/* Decorative Images */
+.dog-image {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 462px;
+  height: 522px;
+  z-index: 1;
+  left: 63px;
+  margin-left: auto;
+}
+
+.cat-image {
+  position: absolute;
+  top: 356px;
+  left: -34px;
+  width: 451px;
+  height: 676px;
+  z-index: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .nav-links {
+    display: none;
+  }
+
+  .checkout-form {
+    width: 100%;
+    max-width: 600px;
+    padding: 24px;
+  }
+
+  .dog-image,
+  .cat-image {
+    width: 300px;
+    height: auto;
+  }
+
+  .location-inputs {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-nav {
+    padding: 0 16px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .nav-icons {
+    gap: 20px;
+  }
+
+  .checkout-form {
+    padding: 16px;
+    gap: 24px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .input-field,
+  .payment-label {
+    font-size: 16px;
+  }
+
+  .address-input,
+  .location-inputs .input-field,
+  .pay-button {
+    height: 48px;
+    padding: 12px;
+  }
+
+  .checkbox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .security-note {
+    font-size: 14px;
+  }
+
+  .dog-image,
+  .cat-image {
+    display: none;
+  }
+}
